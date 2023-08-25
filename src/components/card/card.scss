@@ -1,0 +1,16 @@
+.card {
+    // button reset
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    margin: 0;
+    outline: none;
+    padding: 0;
+
+    &-image {
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+    }
+}
