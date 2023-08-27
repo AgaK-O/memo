@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+.App {
+  display: grid;
+  font-family: 'Caveat', cursive;
+  grid-template-columns: 1fr 200px 1050px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". header header. "
+    ". aside main. "
+    ". footer footer. ";
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  grid-area: header;
+  justify-content: center;
+}
+
+aside {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-area: aside;
+}
+
+main {
+  grid-area: main;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: Spin infinite 20s linear;
+  }
+}
+
+
+@keyframes Spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

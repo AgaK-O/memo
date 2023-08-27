@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
+import { CardType } from "../components/types/types";
 
-// export const useFetchData = (initUrl: string, initData: []) => {
-export const useFetchData = (url: string, initData: [] = []) => {
-//   const [url, setUrl] = useState(initUrl);
-  const [data, setData] = useState(initData);
+export const useFetchData = (url: string) => {
+  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState(null);
 
@@ -25,6 +24,5 @@ export const useFetchData = (url: string, initData: [] = []) => {
     fetchData();
   }, []);
 
-//   return [{ data, isLoading, error }, setUrl];
   return { data, isLoading, error };
 };
