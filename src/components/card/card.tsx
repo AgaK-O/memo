@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import background from '../../assets/simons-cat.jpg';
 import { CardType } from "../types/types";
 import './card.scss';
@@ -18,17 +18,24 @@ const initialData = {
 }
 
 export const Card: FC<Props> = ({ card = initialData, turned, disabled, handleClickedCard }) => {
-  const [isClicked, setIsClicked] = useState(false);
+  // const [isDisabled, setIsDisabled] = useState(false);
+  // const [isClicked, setIsClicked] = useState(false);
+  // useEffect(() => {
+  //   setIsDisabled(disabled);
+  //   return () => {
+  //     setIsDisabled(false);
+  //     setIsClicked(false);
+  //   }
+  // }, [isClicked, disabled, setIsDisabled]);
 
   const handleClick = () => {
     handleClickedCard(card);
-    setIsClicked(true);
+    // setIsClicked(true);
   }
   const finalClassname = `card ${turned ? 'turned' : ''}`;
-  let isDisabled = isClicked || disabled;
 
   return (
-    <button className={finalClassname} onClick={handleClick} disabled={isDisabled} type="button">
+    <button className={finalClassname} onClick={handleClick} disabled={disabled} type="button">
       <img className="card-image" src={card.url} />
       <img className="card-background" src={background} />
     </button>
