@@ -23,9 +23,9 @@ export const Card: FC<Props> = ({ card = initialData, turned, handleClickedCard 
   }
 
   return (
-    <button className="card" onClick={handleClick}>
-      {turned && <img className="card-image" src={card.url} />}
-      {!turned && <img className="card-background" src={background} />}
+    <button className={`card ${turned ? 'turned' : ''}`} onClick={handleClick}>
+      <img className="card-image" src={card.url} />
+      <img className="card-background" src={background} />
     </button>
   );
 };

@@ -15,7 +15,6 @@ export const Grid: FC<Props> = ({ cards, updateSteps }) => {
     useEffect(() => {
         if (first && second) {
             if (first.id === second.id) {
-                console.log('match')
                 if (first.uniqueId) {
                      cards[first.uniqueId].matched = true; 
                     }
@@ -24,7 +23,6 @@ export const Grid: FC<Props> = ({ cards, updateSteps }) => {
                 }
                 resetClicks();
             } else {
-                console.log('no match')
                 updateSteps();
                 setTimeout(() => { resetClicks() }, 1500);
             }
@@ -33,6 +31,8 @@ export const Grid: FC<Props> = ({ cards, updateSteps }) => {
 
     const handleEachClick = (card: CardType) => {
         first ? setSecond(card) : setFirst(card);
+        console.log(card.uniqueId === first?.uniqueId);
+        console.log(card.uniqueId === second?.uniqueId);
     }
 
     const resetClicks = () => {
