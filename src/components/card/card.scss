@@ -6,28 +6,25 @@
     margin: 0;
     outline: none;
     padding: 0;
-
-    display: inline-flex;
-    // 
+    
+    // other properties
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    height: 160px;
+    position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
-    position: relative;
-    height: 200px;
-        width: 200px;
+    width: 160px;
 
     &-image,
     &-background {
+        backface-visibility: hidden;
         border: 2px solid #333;
         box-sizing: border-box;
         filter: grayscale(0.6);
-        height: 200px;
-        width: 200px;
+        height: 100%;
         object-fit: cover;
-    
         position: absolute;
-  backface-visibility: hidden;
-  height: 100%;
         width: 100%;
     }
 

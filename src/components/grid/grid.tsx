@@ -11,9 +11,11 @@ type Props = {
 export const Grid: FC<Props> = ({ cards, updateSteps }) => {
     const [first, setFirst] = useState<CardType | null>(null);
     const [second, setSecond] = useState<CardType | null>(null);
+    const [disabled, setDisabled] = useState(false)
 
     useEffect(() => {
         if (first && second) {
+            setDisabled(true);
             if (first.id === second.id) {
                 if (first.uniqueId) {
                      cards[first.uniqueId].matched = true; 
@@ -31,13 +33,12 @@ export const Grid: FC<Props> = ({ cards, updateSteps }) => {
 
     const handleEachClick = (card: CardType) => {
         first ? setSecond(card) : setFirst(card);
-        console.log(card.uniqueId === first?.uniqueId);
-        console.log(card.uniqueId === second?.uniqueId);
     }
 
     const resetClicks = () => {
         setFirst(null);
         setSecond(null);
+        setDisabled(false);
     }
 
     return <div className='grid'>
@@ -50,7 +51,9 @@ export const Grid: FC<Props> = ({ cards, updateSteps }) => {
                 key={`${card.id}${i}`}
                 card={card}
                 handleClickedCard={handleEachClick}
-                turned={card.uniqueId === first?.uniqueId || card.uniqueId === second?.uniqueId || card.matched} />
+                turned={card.uniqueId === first?.uniqueId || card.uniqueId === second?.uniqueId || card.matched}
+                disabled={disabled}
+                />
         })}
     </div>
 }

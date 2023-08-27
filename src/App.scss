@@ -3,7 +3,7 @@
 .App {
   display: grid;
   font-family: 'Caveat', cursive;
-  grid-template-columns: 1fr 200px 1050px 1fr;
+  grid-template-columns: 1fr 200px 850px 1fr;
   grid-template-rows: auto;
   grid-template-areas:
     ". header header. "
@@ -19,7 +19,7 @@ header {
 }
 
 aside {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   grid-area: aside;
@@ -29,20 +29,10 @@ main {
   grid-area: main;
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: Spin infinite 20s linear;
-  }
+footer {
+  grid-area: footer;
 }
 
-
-@keyframes Spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  color: inherit;
 }

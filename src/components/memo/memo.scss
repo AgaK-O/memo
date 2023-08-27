@@ -1,0 +1,19 @@
+.reset-button {
+    background: transparent;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.5em;
+    margin: 0 20px 20px;
+    padding: 10px 20px;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.steps-counter {
+    font-size: 1.5em;
+    margin-left: 40px;
+}

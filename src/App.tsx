@@ -26,17 +26,17 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Memo game</h1>
+        <h1>Memo Cat</h1>
       </header>
       {isLoading && <Loader />}
       {error && <h1>{`The cats don't give a damn. Sorry. ${error}`}</h1>}
       <Memo cards={cards} resetGame={resetGame}/>
+      <footer>
+        <p>Graphics Copyright © Simon’s Cat Ltd.</p>
+        <p>Images by <a href="https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t">Cat API</a></p>
+        </footer>
     </div>
   );
 }
 
 export default App;
-
-// tempting as using context here would be, the react docs are quite explicit 
-// about usecases not enough complex to resort to this solution 🤷‍♀️
-// https://react.dev/learn/passing-data-deeply-with-context#before-you-use-context

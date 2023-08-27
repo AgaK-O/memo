@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import { CardType } from '../types/types';
 import { Grid } from '../grid/grid';
+import './memo.scss';
 
 type Props = {
     cards: CardType[];
@@ -20,8 +21,8 @@ export const Memo:FC<Props> = ({cards, resetGame}) => {
   return (
     <>
       <aside>
-        <button onClick={handleNewGame}>New game</button>
-        <span>Steps: {steps}</span>
+        <button className="reset-button" onClick={handleNewGame} type='button' >New game</button>
+        <p className='steps-counter' >Steps: {steps}</p>
       </aside>
 
       <main>
