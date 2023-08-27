@@ -4,18 +4,23 @@ import { Grid } from '../grid/grid';
 
 type Props = {
     cards: CardType[];
+    resetGame: () => void;
 }
-export const Memo:FC<Props> = ({cards}) => {
+export const Memo:FC<Props> = ({cards, resetGame}) => {
   const [steps, setSteps] = useState(0);
 
   const updateSteps = () => {
     setSteps(prevSteps => ++prevSteps)
   }
-console.log(cards)
+
+  const handleNewGame = () => {
+    resetGame();
+  }
+
   return (
     <>
       <aside>
-        <button onClick={updateSteps}>New game</button>
+        <button onClick={handleNewGame}>New game</button>
         <span>Steps: {steps}</span>
       </aside>
 

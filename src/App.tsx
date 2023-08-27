@@ -5,10 +5,12 @@ import { randomizeArray } from './utils/randomize';
 import { CardType } from './components/types/types';
 import './App.scss';
 import { Memo } from './components/memo/memo';
+import { Loader } from './components/loader/loader';
 
 function App() {
   const [cards, setCards] = useState<CardType[]>([]);
-  const { data, isLoading, error } = useFetchData(URL);
+  const [refetch, setRefetch] = useState(0)
+  const { data, isLoading, error } = useFetchData(URL, refetch);
 
   useEffect(() => {
     if (data) {
@@ -17,14 +19,18 @@ function App() {
     }
   }, [data]);
 
+  const resetGame = () => {
+    setRefetch(prevRefetch => ++prevRefetch);
+  }
+
   return (
     <div className="App">
       <header>
         <h1>Memo game</h1>
       </header>
-      {isLoading && <h1>We're gathering the cats, give us a moment ... </h1>}
+      {isLoading && <Loader />}
       {error && <h1>{`The cats don't give a damn. Sorry. ${error}`}</h1>}
-      <Memo cards={cards}/>
+      <Memo cards={cards} resetGame={resetGame}/>
     </div>
   );
 }
