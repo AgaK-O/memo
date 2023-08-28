@@ -34,7 +34,7 @@ export const Grid: FC<Props> = ({ cards, updateSteps }) => {
         return () => {
             setDisabled(false);
         };
-    }, [first, second]);
+    }, [first, second, cards, updateSteps]);
 
     const handleEachClick = (card: CardType) => {
         if (first) {

@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { CardType } from '../types/types';
 import { Grid } from '../grid/grid';
 import './memo.scss';
@@ -10,9 +10,9 @@ type Props = {
 export const Memo:FC<Props> = ({cards, resetGame}) => {
   const [steps, setSteps] = useState(0);
 
-  const updateSteps = () => {
+  const updateSteps = useCallback(() => {
     setSteps(prevSteps => ++prevSteps)
-  }
+  }, [setSteps])
 
   const handleResetGame = () => {
     resetGame();

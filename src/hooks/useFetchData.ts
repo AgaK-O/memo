@@ -27,7 +27,7 @@ export const useFetchData = (url: string, trigger?: number) => {
       setIsLoading(false);
     };
     fetchData();
-  }, [trigger]);
+  }, [trigger, URL]);
 
   return { data, isLoading, error };
 };
