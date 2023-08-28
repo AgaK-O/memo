@@ -15,13 +15,8 @@ export const useFetchData = (url: string, trigger?: number) => {
         const response = await fetch(url);
         const fetchedData = await response.json();
         setData(fetchedData);
-      } catch (err: unknown) {
-        if (typeof err === "string" || typeof err === "boolean") {
-          setError(err);
-        } else {
-          throw new Error('An error occured while fetching your cats.')
-        }
-
+      } catch {
+        setError('An error occured while fetching your cats.');
       }
 
       setIsLoading(false);

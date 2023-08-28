@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { Card } from '../card/card';
-import { CardType } from '../types/types';
+import { CardType } from '../../types/types';
 import './grid.scss';
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 export const Grid: FC<Props> = ({ cards, updateSteps }) => {
     const [first, setFirst] = useState<CardType | null>(null);
     const [second, setSecond] = useState<CardType | null>(null);
-    const [disabled, setDisabled] = useState(false)
+    const [disabled, setDisabled] = useState(false);
 
     useEffect(() => {
         if (first && second) {
@@ -47,13 +47,13 @@ export const Grid: FC<Props> = ({ cards, updateSteps }) => {
         } else {
             setFirst(card);
         }
-    }
+    };
 
     const resetClicks = () => {
         setFirst(null);
         setSecond(null);
         setDisabled(false);
-    }
+    };
 
     return <div className='grid'>
         {cards?.map((card: CardType, i) => {

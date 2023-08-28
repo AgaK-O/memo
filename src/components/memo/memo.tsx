@@ -1,5 +1,5 @@
 import { FC, useCallback, useState } from 'react';
-import { CardType } from '../types/types';
+import { CardType } from '../../types/types';
 import { Grid } from '../grid/grid';
 import './memo.scss';
 

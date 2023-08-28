@@ -1,6 +1,6 @@
 import { FC } from "react";
 import background from '../../assets/simons-cat.jpg';
-import { CardType } from "../types/types";
+import { CardType } from "../../types/types";
 import './card.scss';
 
 type Props = {
@@ -10,14 +10,7 @@ type Props = {
   handleClickedCard: (v: CardType) => void;
 }
 
-const initialData = {
-  id: '',
-  url: background,
-  height: 0,
-  width: 0,
-}
-
-export const Card: FC<Props> = ({ card = initialData, turned, disabled, handleClickedCard }) => {
+export const Card: FC<Props> = ({ card, turned, disabled, handleClickedCard }) => {
 
   const handleClick = () => {
     handleClickedCard(card);
