@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 .memo-game {
-  background-color: rgba(0, 0, 0, 0.05);
   display: grid;
-  font-family: 'Caveat', cursive;
   grid-template-columns: 1fr 200px 850px 1fr;
   grid-template-rows: auto;
   grid-template-areas:
     ". header header. "
     ". aside main. "
     ". footer footer. ";
-  margin: 0 auto;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: 'Caveat', cursive;
+  height: 100%;
+  width: 100%;
+
 }
 
 header {

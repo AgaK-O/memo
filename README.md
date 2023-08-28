@@ -1,6 +1,17 @@
-# Getting Started with Create React App
+# Memo Cat Game 🐈
+See the deployed version [here](https://memo-cat.netlify.app/) and have a go with the game.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Written in React & TypeScript according to [specification](https://www.craft.me/s/y2SHM41neFDfE6) as part of the recruitment process.
+
+Graphics used in the project are owned by [Simon’s Cat Ltd.](https://simonscat.com/) and cat images are provided by [Cat API](https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t).
+
+Enjoy the game and looking under the hood!
+
+* * *
+
+
+# This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
@@ -13,11 +24,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
