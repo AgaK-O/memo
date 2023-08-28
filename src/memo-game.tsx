@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useFetchData } from './hooks/useFetchData';
 import { URL } from './constants/constants';
 import { randomizeArray } from './utils/randomize';
 import { CardType } from './components/types/types';
-import './App.scss';
+import './memo-game.scss';
 import { Memo } from './components/memo/memo';
 import { Loader } from './components/loader/loader';
 
-function App() {
+function MemoGame() {
   const [cards, setCards] = useState<CardType[]>([]);
   const [refetch, setRefetch] = useState(0)
   const { data, isLoading, error } = useFetchData(URL, refetch);
@@ -24,12 +24,12 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="memo-game">
       <header>
         <h1>Memo Cat</h1>
       </header>
       {isLoading && <Loader />}
-      {error && <h1>{`The cats don't give a damn. Sorry. ${error}`}</h1>}
+      {error && <h1>{`The cats don't give a damn. Sorry. ${error === 'string' ? error : ''}`}</h1>}
       <Memo cards={cards} resetGame={resetGame}/>
       <footer>
         <p>Graphics Copyright © Simon’s Cat Ltd.</p>
@@ -39,4 +39,4 @@ function App() {
   );
 }
 
-export default App;
+export default MemoGame;

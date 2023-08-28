@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Card } from '../card/card';
 import { CardType } from '../types/types';
 import './grid.scss';
@@ -37,7 +37,6 @@ export const Grid: FC<Props> = ({ cards, updateSteps }) => {
     }, [first, second]);
 
     const handleEachClick = (card: CardType) => {
-        // first ? setSecond(card) : setFirst(card);
         if (first) {
             if(first.uniqueId === card.uniqueId) {
                 return null;

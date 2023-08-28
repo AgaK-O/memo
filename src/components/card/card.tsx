@@ -18,19 +18,9 @@ const initialData = {
 }
 
 export const Card: FC<Props> = ({ card = initialData, turned, disabled, handleClickedCard }) => {
-  // const [isDisabled, setIsDisabled] = useState(false);
-  // const [isClicked, setIsClicked] = useState(false);
-  // useEffect(() => {
-  //   setIsDisabled(disabled);
-  //   return () => {
-  //     setIsDisabled(false);
-  //     setIsClicked(false);
-  //   }
-  // }, [isClicked, disabled, setIsDisabled]);
 
   const handleClick = () => {
     handleClickedCard(card);
-    // setIsClicked(true);
   }
   const finalClassname = `card ${turned ? 'turned' : ''}`;
 

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { CardType } from '../types/types';
 import { Grid } from '../grid/grid';
 import './memo.scss';
@@ -14,14 +14,15 @@ export const Memo:FC<Props> = ({cards, resetGame}) => {
     setSteps(prevSteps => ++prevSteps)
   }
 
-  const handleNewGame = () => {
+  const handleResetGame = () => {
     resetGame();
+    setSteps(0);
   }
 
   return (
     <>
       <aside>
-        <button className="reset-button" onClick={handleNewGame} type='button' >New game</button>
+        <button className="reset-button" onClick={handleResetGame} type='button' >New game</button>
         <p className='steps-counter' >Steps: {steps}</p>
       </aside>
 
