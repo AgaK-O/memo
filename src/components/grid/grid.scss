@@ -1,18 +1,18 @@
 .grid {
-    column-gap: 10px;
+    gap: 5px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    max-width: 440px;
-    row-gap: 10px;
-    width: 100%;
+    margin: 0 auto;
+    width: 340px;
+    max-width: 100%;
 
     @media (min-width: 500px) {
         grid-template-columns: repeat(5, 1fr);
-        max-width: 650px;
+        width: 500px;
     }
 
     @media (min-width: 900px) {
-        max-width: 1050px;
+        gap: 10px;
+        width: 1050px;
     }
-
 }

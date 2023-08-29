@@ -10,15 +10,15 @@
     // other properties
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     display: inline-flex;
-    height: 100px;
+    height: 80px;
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
-    width: 100px;
+    width: 80px;
 
     @media (min-width: 500px) {
-        height: 120px;
-        width: 120px;
+        height: 100px;
+        width: 100px;
     }
 
     @media (min-width: 900px) {
