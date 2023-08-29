@@ -6,20 +6,27 @@ body {
   height: 100%;
   margin: 0;
   width: 100%;
-
+  max-width: 100%;
 }
 
 header {
   display: flex;
   grid-area: header;
   justify-content: center;
+  align-items: center;
 }
 
 aside {
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   grid-area: aside;
+
+  @media (min-width: 900px) {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 }
 
 main {
@@ -27,7 +34,15 @@ main {
 }
 
 footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   grid-area: footer;
+  justify-content: center;
+
+  @media (min-width: 900px) {
+    align-items: flex-start;
+  }
 }
 
 a {
@@ -36,10 +51,19 @@ a {
 
 .memo-game {
   display: grid;
-  grid-template-columns: 1fr 200px 850px 1fr;
   grid-template-rows: auto;
   grid-template-areas:
-    ". header header. "
-    ". aside main. "
-    ". footer footer. ";
+    "header"
+    "main"
+    "aside"
+    "footer";
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 200px 850px 1fr;
+    grid-template-areas:
+      ". header header. "
+      ". aside main. "
+      ". footer footer. ";
+  }
+
 }

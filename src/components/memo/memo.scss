@@ -5,8 +5,12 @@
     cursor: pointer;
     font-family: inherit;
     font-size: 1.5em;
-    margin: 0 20px 20px;
+    margin: 20px;
     padding: 10px 20px;
+
+    @media (min-width: 900px) {
+        margin: 0 20px 20px;
+    }
 
     &:hover {
         background-color: rgba(0, 0, 0, 0.1);
@@ -15,5 +19,8 @@
 
 .steps-counter {
     font-size: 1.5em;
-    margin-left: 40px;
+
+    @media (min-width: 900px) {
+        margin-left: 40px;
+    }
 }

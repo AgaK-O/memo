@@ -30,11 +30,11 @@ function MemoGame() {
       </header>
       {isLoading && <Loader />}
       {error && <h1>{error}</h1>}
-      <Memo cards={cards} resetGame={resetGame}/>
+      <Memo cards={cards} resetGame={resetGame} />
       <footer>
         <p>Graphics Copyright © Simon’s Cat Ltd.</p>
         <p>Images by <a href="https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t">Cat API</a></p>
-        </footer>
+      </footer>
     </div>
   );
 }
