@@ -16,7 +16,7 @@ export const Grid: FC<Props> = ({ cards, updateSteps }) => {
     useEffect(() => {
         if (first && second) {
             setDisabled(true);
-        
+
             if (first.id === second.id) {
 
                 if (first.uniqueId) {
@@ -38,12 +38,12 @@ export const Grid: FC<Props> = ({ cards, updateSteps }) => {
 
     const handleEachClick = (card: CardType) => {
         if (first) {
-            if(first.uniqueId === card.uniqueId) {
+            if (first.uniqueId === card.uniqueId) {
                 return null;
             } else {
                 setSecond(card);
             }
-        
+
         } else {
             setFirst(card);
         }

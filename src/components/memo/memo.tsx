@@ -4,10 +4,10 @@ import { Grid } from '../grid/grid';
 import './memo.scss';
 
 type Props = {
-    cards: CardType[];
-    resetGame: () => void;
+  cards: CardType[];
+  resetGame: () => void;
 }
-export const Memo:FC<Props> = ({cards, resetGame}) => {
+export const Memo: FC<Props> = ({ cards, resetGame }) => {
   const [steps, setSteps] = useState(0);
 
   const updateSteps = useCallback(() => {
